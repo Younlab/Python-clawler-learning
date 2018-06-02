@@ -17,7 +17,7 @@ class Webtoon:
 
     def _get_info(self, attr_name):
         """
-        내용 참조, webtoon class 초기화에서 title, author, description 내용이 없을 경우 set_info에서 매칭되는 값 내용을 불러온다.
+        내용 참조, webtoon class 초기화에서 title, author, description 내용이 없을 경우 set_info 에서 매칭되는 값 내용을 불러온다.
         :return:
         """
         if not getattr(self, attr_name):
@@ -83,7 +83,7 @@ class Webtoon:
 
     def crawler_episode_list(self):
         """
-        webtoon_id에 해당하는 HTML 문서의 episode 목록을 생성/왜있는지 이해못함.
+        webtoon_id에 해당하는 HTML 문서의 episode 목록을 생성
         :return:
         """
 
