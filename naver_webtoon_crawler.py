@@ -1,7 +1,5 @@
 import os
-from io import BytesIO
 from urllib import parse
-
 import requests
 from bs4 import BeautifulSoup
 
@@ -116,11 +114,6 @@ class Webtoon:
         self._episode_list = list()
         self._html = ''
 
-    def _get_info(self, attr_name):
-        if not getattr(self, attr_name):
-            self.set_info()
-        return getattr(self, attr_name)
-
     @property
     def title(self):
         return self._get_info('_title')
@@ -132,6 +125,11 @@ class Webtoon:
     @property
     def description(self):
         return self._get_info('_description')
+
+    def _get_info(self, attr_name):
+        if not getattr(self, attr_name):
+            self.set_info()
+        return getattr(self, attr_name)
 
     @property
     def html(self):
